@@ -1,4 +1,4 @@
-import time
+.import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -71,11 +71,11 @@ class TestHootel(object):
         assert len(erase_actual_booking_btn) >= 1
 
     def test_hotel_user_past_booking(self):
-        booking_btn = browser.find_element(By.ID, 'user-bookings')
+        booking_btn = self.browser.find_element(By.ID, 'user-bookings')
         booking_btn.click()
         time.sleep(2)
 
-        erase_past_booking_btn = browser.find_elements(By.XPATH, '//div[@id="past"]//button')
+        erase_past_booking_btn = self.browser.find_elements(By.XPATH, '//div[@id="past"]//button')
         assert len(erase_past_booking_btn) >= 1
 
         
